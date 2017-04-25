@@ -1,0 +1,13 @@
+<ul class="cookbook-list">
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li>
+      <% name = recipe.name == "" ? "" : " #{recipe.name}" %>
+      <% description = recipe.description  == "" ? "" : " | #{recipe.description}" %>
+      <% cooking_time = recipe.cooking_time == "" ? "" : " (#{recipe.cooking_time})" %>
+      <% done = recipe.done == true ? "<a href=\"/done/#{index}\"><img src=\"/images/done.png\" alt=\"done\"></a>" : "<a href=\"/done/#{index}\"><img src=\"/images/not_done.png\" alt=\"not done\"></a>" %>
+      <% difficulty = recipe.difficulty == "" ? "" : " [#{recipe.difficulty}]" %>
+      <%= "#{done}#{index + 1}.#{name}#{description}#{cooking_time}#{difficulty} - <a href=\"/destroy/#{index}\">remove</a>" %>
+    </li>
+    <% end %>
+</ul>
+

@@ -1,0 +1,15 @@
+ul.cookbook-list {
+    padding: 0;
+}
+
+ul.cookbook-list li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+ul.cookbook-list li img {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    right: 30px;
+}
